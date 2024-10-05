@@ -125,14 +125,14 @@ public class DeluxeMenusConfig {
                         DebugLevel.HIGH,
                         Level.INFO,
                         "Individual menus directory did not exist.",
-                        "Created directory: plugins" + separator + "DeluxeMenus" + separator + "gui_menus"
+                        "Created directory: plugins" + separator + "MvndiMenus" + separator + "gui_menus"
                 );
             }
         } catch (SecurityException e) {
             DeluxeMenus.debug(
                     DebugLevel.HIGHEST,
                     Level.WARNING,
-                    "Something went wrong while creating directory: plugins" + separator + "DeluxeMenus" + separator
+                    "Something went wrong while creating directory: plugins" + separator + "MvndiMenus" + separator
                             + "gui_menus"
             );
         }
@@ -161,7 +161,7 @@ public class DeluxeMenusConfig {
 
         FileConfiguration c = plugin.getConfig();
 
-        c.options().header("DeluxeMenus " + plugin.getDescription().getVersion()
+        c.options().header("MvndiMenus " + plugin.getDescription().getVersion()
                 + " main configuration file"
                 + "\n"
                 + "\nA full wiki on how to use this plugin can be found at:"
@@ -410,7 +410,7 @@ public class DeluxeMenusConfig {
                 DeluxeMenus.debug(
                         DebugLevel.HIGHEST,
                         Level.SEVERE,
-                        "Could not create menu file: plugins" + separator + "DeluxeMenus" + separator + "gui_menus"
+                        "Could not create menu file: plugins" + separator + "MvndiMenus" + separator + "gui_menus"
                                 + separator + fileName
                 );
                 return false;

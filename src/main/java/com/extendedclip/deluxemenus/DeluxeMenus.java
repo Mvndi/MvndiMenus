@@ -85,7 +85,7 @@ public class DeluxeMenus extends JavaPlugin {
           DebugLevel.HIGHEST,
           Level.SEVERE,
           "Could not hook into PlaceholderAPI!",
-          "DeluxeMenus will now disable!"
+          "MvndiMenus will now disable!"
       );
       Bukkit.getPluginManager().disablePlugin(this);
       return;

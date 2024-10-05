@@ -47,7 +47,7 @@ tasks {
         relocate("org.objectweb.asm", "com.extendedclip.deluxemenus.libs.asm")
         relocate("org.openjdk.nashorn", "com.extendedclip.deluxemenus.libs.nashorn")
         relocate("net.kyori", "com.extendedclip.deluxemenus.libs.adventure")
-        archiveFileName.set("DeluxeMenus-${rootProject.version}.jar")
+        archiveFileName.set("MvndiMenus-${rootProject.version}.jar")
     }
     java {
         sourceCompatibility = JavaVersion.VERSION_11
