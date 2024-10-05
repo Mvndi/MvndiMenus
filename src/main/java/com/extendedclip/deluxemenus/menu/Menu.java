@@ -138,7 +138,7 @@ public class Menu extends Command {
             DeluxeMenus.debug(
                     DebugLevel.LOWEST,
                     Level.INFO,
-                    "Found a DeluxeMenus item in a player's inventory. Removing it."
+                    "Found a MvndiMenus item in a player's inventory. Removing it."
             );
             player.getInventory().remove(itemStack);
         }
