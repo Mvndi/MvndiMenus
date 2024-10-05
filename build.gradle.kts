@@ -4,6 +4,9 @@ plugins {
     id("com.github.ben-manes.versions") version "0.48.0"
 }
 
+var gprUser = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
+var gprToken = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
+
 // Change to true when releasing
 val release = false
 val majorVersion = "1.14.1"
@@ -19,6 +22,10 @@ repositories {
     maven("https://repo.glaremasters.me/repository/public/")
     maven("https://nexus.phoenixdevt.fr/repository/maven-public/")
     maven("https://jitpack.io")
+    maven {
+        url = uri("https://maven.pkg.github.com/Mvndi/MvndiCore")
+        credentials { username = gprUser; password = gprToken }
+    }
 }
 
 dependencies {
@@ -40,6 +47,7 @@ dependencies {
     implementation(libs.adventure.minimessage)
 
     compileOnly("org.jetbrains:annotations:23.0.0")
+    compileOnly("net.mvndicraft:mvndicore:2.0.0-SNAPSHOT")
 }
 
 tasks {
