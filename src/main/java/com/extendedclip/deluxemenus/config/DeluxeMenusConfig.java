@@ -170,7 +170,7 @@ public class DeluxeMenusConfig {
 
         );
         c.addDefault("debug", "HIGHEST");
-        c.addDefault("check_updates", true);
+        c.addDefault("check_updates", false);
         c.options().copyDefaults(true);
 
         if (!c.contains("gui_menus")) {

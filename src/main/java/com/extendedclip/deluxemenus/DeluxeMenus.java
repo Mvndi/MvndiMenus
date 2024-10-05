@@ -22,6 +22,8 @@ import com.google.common.io.ByteStreams;
 import me.clip.placeholderapi.PlaceholderAPIPlugin;
 import net.kyori.adventure.platform.bukkit.BukkitAudiences;
 import net.kyori.adventure.text.Component;
+import net.mvndicraft.mvndicore.MvndiCore;
+import net.mvndicraft.mvndicore.commands.subcommands.ReloadCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
@@ -161,6 +163,10 @@ public class DeluxeMenus extends JavaPlugin {
         );
       }
     }
+
+    MvndiCore mCore = MvndiCore.getInstance();
+    mCore.registerSubCommand(new ReloadCommand("menus", this));
+    mCore.registerModule("menus");
 
     startMetrics();
 
