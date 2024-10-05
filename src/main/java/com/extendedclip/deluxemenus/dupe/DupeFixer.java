@@ -32,7 +32,7 @@ public class DupeFixer implements Listener {
         DeluxeMenus.debug(
                 DebugLevel.LOWEST,
                 Level.INFO,
-                "Someone picked up a DeluxeMenus item. Removing it."
+                "Someone picked up a MvndiMenus item. Removing it."
         );
         event.getItem().remove();
     }
@@ -46,7 +46,7 @@ public class DupeFixer implements Listener {
         DeluxeMenus.debug(
                 DebugLevel.LOWEST,
                 Level.INFO,
-                "A DeluxeMenus item was dropped in the world. Removing it."
+                "A MvndiMenus item was dropped in the world. Removing it."
         );
         event.getItemDrop().remove();
     }
@@ -63,7 +63,7 @@ public class DupeFixer implements Listener {
                         DeluxeMenus.debug(
                                 DebugLevel.LOWEST,
                                 Level.INFO,
-                                "Player logged in with a DeluxeMenus item in their inventory. Removing it."
+                                "Player logged in with a MvndiMenus item in their inventory. Removing it."
                         );
                         event.getPlayer().getInventory().remove(itemStack);
                     }},

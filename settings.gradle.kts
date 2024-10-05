@@ -1,3 +1,3 @@
-rootProject.name = "DeluxeMenus"
+rootProject.name = "MvndiMenus"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")

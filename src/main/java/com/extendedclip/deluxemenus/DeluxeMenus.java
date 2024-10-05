@@ -22,6 +22,8 @@ import com.google.common.io.ByteStreams;
 import me.clip.placeholderapi.PlaceholderAPIPlugin;
 import net.kyori.adventure.platform.bukkit.BukkitAudiences;
 import net.kyori.adventure.text.Component;
+import net.mvndicraft.mvndicore.MvndiCore;
+import net.mvndicraft.mvndicore.commands.subcommands.ReloadCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
@@ -85,7 +87,7 @@ public class DeluxeMenus extends JavaPlugin {
           DebugLevel.HIGHEST,
           Level.SEVERE,
           "Could not hook into PlaceholderAPI!",
-          "DeluxeMenus will now disable!"
+          "MvndiMenus will now disable!"
       );
       Bukkit.getPluginManager().disablePlugin(this);
       return;
@@ -161,6 +163,10 @@ public class DeluxeMenus extends JavaPlugin {
         );
       }
     }
+
+    MvndiCore mCore = MvndiCore.getInstance();
+    mCore.registerSubCommand(new ReloadCommand("menus", this));
+    mCore.registerModule("menus");
 
     startMetrics();
 
@@ -338,5 +344,15 @@ public class DeluxeMenus extends JavaPlugin {
             .filter(hook -> hook instanceof SimpleCache)
             .map(hook -> (SimpleCache) hook)
             .forEach(SimpleCache::clearCache);
+  }
+
+  @Override
+  public void reloadConfig() {
+    clearCaches();
+    super.reloadConfig();
+    saveConfig();
+    DeluxeMenus.debugLevel(getConfiguration().debugLevel());
+    Menu.unload();
+    getConfiguration().loadGUIMenus();
   }
 }

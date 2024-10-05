@@ -16,7 +16,7 @@ import static net.kyori.adventure.text.Component.text;
 public enum Messages {
 
     PLUGIN_TITLE(empty()
-        .append(text("Deluxe", NamedTextColor.GOLD, TextDecoration.BOLD))
+        .append(text("Mvndi", NamedTextColor.GOLD, TextDecoration.BOLD))
         .append(text("Menus", NamedTextColor.YELLOW))),
 
     PLUGIN_VERSION(PLUGIN_TITLE.message
@@ -35,21 +35,21 @@ public enum Messages {
         .append(newline())
         .append(text(">", NamedTextColor.AQUA))
         .append(space().append(space()))
-        .append(text("/dm open <menu-name> [player]", NamedTextColor.WHITE))
+        .append(text("/mm open <menu-name> [player]", NamedTextColor.WHITE))
         .append(newline())
         .append(text(">", NamedTextColor.AQUA))
         .append(space().append(space()))
-        .append(text("/dm list", NamedTextColor.WHITE))),
+        .append(text("/mm list", NamedTextColor.WHITE))),
 
     HELP_ADMIN(HELP.message
         .append(newline())
         .append(text(">", NamedTextColor.AQUA))
         .append(space().append(space()))
-        .append(text("/dm execute <player> <action>", NamedTextColor.WHITE))
+        .append(text("/mm execute <player> <action>", NamedTextColor.WHITE))
         .append(newline())
         .append(text(">", NamedTextColor.AQUA))
         .append(space().append(space()))
-        .append(text("/dm reload [menu]", NamedTextColor.WHITE))),
+        .append(text("/mm reload [menu]", NamedTextColor.WHITE))),
 
     NO_PERMISSION(text("You don't have permission to do that!", NamedTextColor.RED)),
     NO_PERMISSION_PLAYER_ARGUMENT(text("You don't have permission to use the argument -p:<player>!", NamedTextColor.RED)),
@@ -59,14 +59,14 @@ public enum Messages {
         .append(text("Use"))
         .append(space())),
     WRONG_USAGE(WRONG_USAGE_BASE.message
-        .append(text("/dm help", NamedTextColor.GRAY))),
+        .append(text("/mm help", NamedTextColor.GRAY))),
     WRONG_USAGE_EXECUTE_COMMAND(WRONG_USAGE_BASE.message
-        .append(text("/dm execute <player> <action>", NamedTextColor.GRAY))),
+        .append(text("/mm execute <player> <action>", NamedTextColor.GRAY))),
 
     WRONG_USAGE_DUMP_COMMAND(WRONG_USAGE_BASE.message
-        .append(text("/dm dump <menu-name/config>", NamedTextColor.GRAY))),
+        .append(text("/mm dump <menu-name/config>", NamedTextColor.GRAY))),
     WRONG_USAGE_OPEN_COMMAND(WRONG_USAGE_BASE.message
-        .append(text("/dm open <menu-name> [player]", NamedTextColor.GRAY))),
+        .append(text("/mm open <menu-name> [player]", NamedTextColor.GRAY))),
     PLAYER_IS_NOT_ONLINE(empty()
         .append(text("Player:", NamedTextColor.RED))
         .append(space())

@@ -138,7 +138,7 @@ public class Menu extends Command {
             DeluxeMenus.debug(
                     DebugLevel.LOWEST,
                     Level.INFO,
-                    "Found a DeluxeMenus item in a player's inventory. Removing it."
+                    "Found a MvndiMenus item in a player's inventory. Removing it."
             );
             player.getInventory().remove(itemStack);
         }
@@ -194,7 +194,7 @@ public class Menu extends Command {
                 return;
             }
         }
-        boolean registered = commandMap.register("DeluxeMenus", this);
+        boolean registered = commandMap.register("MvndiMenus", this);
         if (registered) {
             DeluxeMenus.debug(
                     DebugLevel.LOW,
@@ -278,8 +278,8 @@ public class Menu extends Command {
     }
 
     private boolean hasOpenBypassPerm(final @NotNull Player viewer) {
-        return viewer.hasPermission("deluxemenus.openrequirement.bypass." + this.options.name())
-                || viewer.hasPermission("deluxemenus.openrequirement.bypass.*");
+        return viewer.hasPermission("mvndimenus.openrequirement.bypass." + this.options.name())
+                || viewer.hasPermission("mvndimenus.openrequirement.bypass.*");
     }
 
     private boolean handleOpenRequirements(final @NotNull MenuHolder holder) {

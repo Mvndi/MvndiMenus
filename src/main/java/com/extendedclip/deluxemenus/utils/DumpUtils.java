@@ -76,7 +76,7 @@ public final class DumpUtils {
             .append(System.lineSeparator())
             .append(System.lineSeparator());
 
-        builder.append("DeluxeMenus Version: ")
+        builder.append("MvndiMenus Version: ")
             .append(plugin.getDescription().getVersion())
             .append(System.lineSeparator());
 

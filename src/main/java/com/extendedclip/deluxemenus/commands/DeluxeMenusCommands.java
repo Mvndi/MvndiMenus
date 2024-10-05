@@ -45,7 +45,7 @@ public class DeluxeMenusCommands implements CommandExecutor {
 
     public DeluxeMenusCommands(final @NotNull DeluxeMenus plugin) {
         this.plugin = plugin;
-        this.plugin.getCommand("deluxemenus").setExecutor(this);
+        this.plugin.getCommand("mvndimenus").setExecutor(this);
     }
 
     @Override
@@ -73,7 +73,7 @@ public class DeluxeMenusCommands implements CommandExecutor {
         }
 
         if (args[0].equalsIgnoreCase("help")) {
-            if (sender.hasPermission("deluxemenus.admin")) {
+            if (sender.hasPermission("mvndimenus.admin")) {
                 plugin.sms(sender, Messages.HELP_ADMIN);
                 return true;
             }
@@ -82,7 +82,7 @@ public class DeluxeMenusCommands implements CommandExecutor {
             return true;
 
         } else if (args[0].equalsIgnoreCase("dump")) {
-            if (!sender.hasPermission("deluxemenus.admin")) {
+            if (!sender.hasPermission("mvndimenus.admin")) {
                 plugin.sms(sender, Messages.NO_PERMISSION);
                 return true;
             }
@@ -207,7 +207,7 @@ public class DeluxeMenusCommands implements CommandExecutor {
             return true;
 
         } else if (args[0].equalsIgnoreCase("reload")) {
-            if (!sender.hasPermission("deluxemenus.reload")) {
+            if (!sender.hasPermission("mvndimenus.reload")) {
                 plugin.sms(sender, Messages.NO_PERMISSION);
                 return true;
             }
@@ -275,7 +275,7 @@ public class DeluxeMenusCommands implements CommandExecutor {
 
         } else if (args[0].equalsIgnoreCase("list")) {
 
-            if (!sender.hasPermission("deluxemenus.list")) {
+            if (!sender.hasPermission("mvndimenus.list")) {
                 plugin.sms(sender, Messages.NO_PERMISSION);
                 return true;
             }
@@ -340,7 +340,7 @@ public class DeluxeMenusCommands implements CommandExecutor {
 
         } else if (args[0].equalsIgnoreCase("open")) {
 
-            if (!sender.hasPermission("deluxemenus.open")) {
+            if (!sender.hasPermission("mvndimenus.open")) {
                 plugin.sms(sender, Messages.NO_PERMISSION);
                 return true;
             }
@@ -365,7 +365,7 @@ public class DeluxeMenusCommands implements CommandExecutor {
             String placeholderPlayer = null;
 
             if (args.length == 3 && args[2].startsWith("-p:")) {
-                if (!sender.hasPermission("deluxemenus.placeholdersfor")) {
+                if (!sender.hasPermission("mvndimenus.placeholdersfor")) {
                     plugin.sms(sender, Messages.NO_PERMISSION_PLAYER_ARGUMENT);
                     return true;
                 }
@@ -373,7 +373,7 @@ public class DeluxeMenusCommands implements CommandExecutor {
                 placeholderPlayer = args[2].replace("-p:", "");
 
             } else if (args.length >= 4 && args[3].startsWith("-p:")) {
-                if (!sender.hasPermission("deluxemenus.placeholdersfor")) {
+                if (!sender.hasPermission("mvndimenus.placeholdersfor")) {
                     plugin.sms(sender, Messages.NO_PERMISSION_PLAYER_ARGUMENT);
                     return true;
                 }
@@ -383,7 +383,7 @@ public class DeluxeMenusCommands implements CommandExecutor {
 
             if (args.length >= 3) {
                 if (placeholderPlayer == null) {
-                    if (player && !sender.hasPermission("deluxemenus.open.others")) {
+                    if (player && !sender.hasPermission("mvndimenus.open.others")) {
                         plugin.sms(sender, Messages.NO_PERMISSION);
                         return true;
                     }
@@ -392,7 +392,7 @@ public class DeluxeMenusCommands implements CommandExecutor {
 
                 } else {
                     if (args.length >= 4) {
-                        if (!sender.hasPermission("deluxemenus.open.others")) {
+                        if (!sender.hasPermission("mvndimenus.open.others")) {
                             plugin.sms(sender, Messages.NO_PERMISSION);
                             return true;
                         }
@@ -439,7 +439,7 @@ public class DeluxeMenusCommands implements CommandExecutor {
                     return true;
 
                 } else {
-                    if (placeholder.hasPermission("deluxemenus.placeholdersfor.exempt")) {
+                    if (placeholder.hasPermission("mvndimenus.placeholdersfor.exempt")) {
                         plugin.sms(
                                 sender,
                                 Messages.PLAYER_IS_EXEMPT.message().replaceText(PLAYER_REPLACER_BUILDER.replacement(placeholderPlayer).build())
