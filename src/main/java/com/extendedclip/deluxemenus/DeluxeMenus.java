@@ -339,4 +339,14 @@ public class DeluxeMenus extends JavaPlugin {
             .map(hook -> (SimpleCache) hook)
             .forEach(SimpleCache::clearCache);
   }
+
+  @Override
+  public void reloadConfig() {
+    clearCaches();
+    super.reloadConfig();
+    saveConfig();
+    DeluxeMenus.debugLevel(getConfiguration().debugLevel());
+    Menu.unload();
+    getConfiguration().loadGUIMenus();
+  }
 }
